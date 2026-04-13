@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Projects — Fredrik Johansson</title>
+  <meta name="description" content="Film projects by Fredrik Johansson — coming soon.">
+  <meta property="og:title" content="Film Projects — Fredrik Johansson">
+  <meta property="og:description" content="Film projects by Fredrik Johansson — coming soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/fredriksocial.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { min-height: 100vh; }
+
+    /* Coming soon overlay */
+    .film-coming-soon {
+      position: fixed; inset: 0;
+      z-index: 500;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+    }
+    .film-coming-soon-content {
+      text-align: center;
+      display: flex; flex-direction: column; align-items: center; gap: 24px;
+    }
+    .film-coming-soon-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(40px, 8vw, 80px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+    .film-coming-soon-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.5;
+    }
+    .film-coming-soon-imdb {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      opacity: 0.6;
+    }
+    .film-coming-soon-imdb a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+      transition: opacity .2s;
+    }
+    .film-coming-soon-imdb a:hover { opacity: 0.7; }
+    .film-back {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      padding: 14px 24px;
+      border: 1px solid var(--text);
+      border-radius: 999px;
+      transition: background .25s ease, color .25s ease;
+    }
+    .film-back:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    /* Blurred placeholder cards */
+    .film-cards {
+      max-width: 900px;
+      margin: 160px auto 0;
+      padding: 0 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      filter: blur(10px);
+      opacity: 0.35;
+      pointer-events: none;
+      user-select: none;
+    }
+    .film-card-ph {
+      aspect-ratio: 4/3;
+      border-radius: 7px;
+      background: var(--border);
+    }
+    .film-card-text {
+      padding: 14px 2px 8px;
+    }
+    .film-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 20px;
+      letter-spacing: -0.03em; margin-bottom: 4px;
+      width: 60%; height: 20px;
+      background: var(--border); border-radius: 4px;
+    }
+    .film-card-sub {
+      width: 40%; height: 14px;
+      background: var(--border); border-radius: 4px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 700px) {
+      .film-cards { grid-template-columns: 1fr; padding: 0 20px; margin-top: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Coming soon overlay -->
+  <div class="film-coming-soon">
+    <div class="film-coming-soon-content">
+      <div class="film-coming-soon-title">Coming Soon</div>
+      <div class="film-coming-soon-sub">Film Projects</div>
+      <div class="film-coming-soon-imdb">For now please check my <a href="https://www.imdb.com/name/nm8478126/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_Fredrik%20Johansson" target="_blank" rel="noopener noreferrer">IMDB</a></div>
+      <a class="film-back" href="index.html">&larr; Back to work</a>
+    </div>
+  </div>
+
+  <!-- Blurred placeholder cards -->
+  <div class="film-cards" aria-hidden="true">
+    <div>
+      <div class="film-card-ph"></div>
+      <div class="film-card-text"><div class="film-card-title"></div><div class="film-card-sub"></div></div>
+    </div>
+    <div>
+      <div class="film-card-ph"></div>
+      <div class="film-card-text"><div class="film-card-title"></div><div class="film-card-sub"></div></div>
+    </div>
+    <div>
+      <div class="film-card-ph"></div>
+      <div class="film-card-text"><div class="film-card-title"></div><div class="film-card-sub"></div></div>
+    </div>
+    <div>
+      <div class="film-card-ph"></div>
+      <div class="film-card-text"><div class="film-card-title"></div><div class="film-card-sub"></div></div>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode from localStorage
+    (function () {
+      var saved = localStorage.getItem('darkMode');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'true' || (saved === null && prefersDark)) {
+        document.body.classList.add('dark');
+      }
+    })();
+  </script>
+</body>
+</html>
