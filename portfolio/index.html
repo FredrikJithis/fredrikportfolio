@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fredrik Johansson — UX/UI Designer</title>
+  <meta name="description" content="Fredrik Johansson — Interaction Designer based in Gothenburg, Sweden.">
+  <meta property="og:title" content="Fredrik Johansson — UX/UI Designer">
+  <meta property="og:description" content="Interaction Designer based in Gothenburg, Sweden.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/Fredrikabout.JPG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="prog" id="prog" aria-hidden="true"></div>
+
+  <!-- Pre-scroll overlay bar -->
+  <div class="pre-scroll-bar" id="preScrollBar">
+    <div class="psb-top">
+      <div></div>
+      <div class="psb-wordmark" id="psbWordmark">
+        <span class="wm-char wm-anchor" id="wm-f">f</span><span class="wm-suffix" id="suf-f"><span class="wm-c">r</span><span class="wm-c">e</span><span class="wm-c">d</span><span class="wm-c">r</span><span class="wm-c">i</span><span class="wm-c">k</span></span><span class="wm-space">&nbsp;</span><span class="wm-char wm-anchor" id="wm-j">j</span><span class="wm-suffix" id="suf-j"><span class="wm-c">o</span><span class="wm-c">h</span><span class="wm-c">a</span><span class="wm-c">n</span><span class="wm-c">s</span><span class="wm-c">s</span><span class="wm-c">o</span><span class="wm-c">n</span></span>
+      </div>
+      <div class="psb-right">
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <span class="dt-icon">◐</span>
+        </button>
+        <div class="contact-block" id="cBlock">
+          <a href="mailto:freddho91@gmail.com">freddho91@gmail.com</a>
+          <a href="https://linkedin.com/in/fredrikjohansson" target="_blank" rel="noopener noreferrer">linkedin.com/in/fredrikjohansson</a>
+        </div>
+      </div>
+    </div>
+    <div class="psb-subtitle">UX/UI Designer — Gothenburg, Sweden</div>
+    <nav id="preScrollNav">
+      <a class="nav-link active" href="#projects" data-text="Projects">Projects</a>
+      <a class="nav-link" href="#about" data-text="About">About</a>
+      <a class="nav-link" id="contactLink" href="#contact" data-text="Contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Page grid -->
+  <div class="page-grid" id="pageGrid">
+
+    <!-- Left column — sidebar -->
+    <div class="col-left">
+      <div class="col-left-inner">
+        <div id="sidebarWordmark">fj</div>
+        <nav id="desktopNav">
+          <a class="nav-link active" href="#projects" data-text="Projects">Projects</a>
+          <a class="nav-link" href="#about" data-text="About">About</a>
+          <a class="nav-link" id="sidebarContactLink" href="#contact" data-text="Contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="col-main">
+      <div class="content-wrap">
+
+        <!-- Projects -->
+        <section id="projects">
+          <div class="section-label">Projects</div>
+          <div class="rule"></div>
+          <div class="project-grid">
+            <a class="project-card" href="projects/tom-the-builder/index.html">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/tomthebuilderbild.png" alt="Tom the Builder AB" loading="lazy">
+                <span class="card-overlay">Brand identity for a carpenter in Uddevalla</span>
+              </div>
+              <div class="card-info"><div class="card-title">TTP BYGG AB</div><div class="card-sub">Branding · Accessibility</div></div>
+            </a>
+            <a class="project-card" href="projects/molnlycke/index.html">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/molnlyckebild.webp" alt="Mölnlycke Healthcare" loading="lazy">
+                <span class="card-overlay">Clinical review tool for wound-care specialists</span>
+              </div>
+              <div class="card-info"><div class="card-title">MÖLNLYCKE HEALTHCARE</div><div class="card-sub">UX-Designer · Internship</div></div>
+            </a>
+            <div class="project-card project-card--soon" aria-disabled="true" tabindex="0">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/hive.jpg" alt="Humblebee" loading="lazy">
+                <span class="card-soon">Coming soon</span>
+              </div>
+              <div class="card-info"><div class="card-title">HUMBLEBEE</div><div class="card-sub">UX/UI Designer · Internship</div></div>
+            </div>
+            <a class="project-card" href="projects/ride-roast/index.html">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/rideroastloggo.png" alt="Ride & Roast" loading="lazy">
+                <span class="card-overlay">Branding and compositing for a motorcycle café</span>
+              </div>
+              <div class="card-info"><div class="card-title">RIDE & ROAST</div><div class="card-sub">BRANDING · Compositing</div></div>
+            </a>
+            <a class="project-card" href="projects/bewell/index.html">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/bw5.png" alt="Bewell" loading="lazy">
+                <span class="card-overlay">Wellness app with generative particle systems</span>
+              </div>
+              <div class="card-info"><div class="card-title">BEWELL</div><div class="card-sub">UX-Designer · Particle Systems</div></div>
+            </a>
+            <a class="project-card" href="projects/brf-galeasen/index.html">
+              <div class="card-img-wrap">
+                <img class="img-ph" src="img/Mockup_brf.png" alt="BRF Galeasen" loading="lazy">
+                <span class="card-overlay">Resident portal with usage tracking</span>
+              </div>
+              <div class="card-info"><div class="card-title">BRF GALEASEN</div><div class="card-sub">UX-Designer · Tracking</div></div>
+            </a>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+          <div class="rule"></div>
+          <div class="about-grid">
+            <div class="about-left">
+              <div class="about-label">About</div>
+              <h2 class="about-heading" id="aboutHeading">
+                <span id="ah-fredrik">fredrik</span>
+                <span id="ah-johansson">johansson</span>
+              </h2>
+              <div class="about-photo">
+                <img src="img/Fredrikabout.JPG" alt="Portrait of Fredrik Johansson" loading="lazy">
+              </div>
+            </div>
+            <div class="about-right">
+              <div class="about-text">
+                <p>I’m a UX/UI Designer based in Gothenburg, with a background that spans both the service industry and the film world. Over the years, I’ve worked across a wide range of roles in film production — from creative tasks to highly structured coordination — which has given me a strong understanding of both storytelling and execution under pressure.</p>
+                <p>I’m especially interested in how structure and creativity meet in digital products, and I enjoy shaping experiences that feel clear, human, and intuitive. My foundation in UX design helps me translate complex needs into simple, usable solutions.</p>
+                <p>Outside of work, I like spending time with friends and staying open to whatever the day brings. I’m naturally curious and always looking to experience new things, learn something new, and grow from it.
+I’m motivated by collaboration and the energy that comes from working with others to solve problems together. I’m also used to fast-paced environments and stay calm and focused even when things get stressful.</p>
+                <p>Soft skills:</p>
+                <ul class="soft-skills">
+                  <li>Collaboration &amp; teamwork</li>
+                  <li>Strong systems thinking (seeing the bigger picture and “ripples”)</li>
+                  <li>Stress resilience</li>
+                  <li>Curiosity and continuous learning</li>
+                  <li>Clear communication</li>
+                </ul>
+              </div>
+
+              <!-- CV download -->
+              <a class="cv-button" href="https://drive.google.com/YOUR-CV-LINK-HERE" target="_blank" rel="noopener noreferrer">
+                <span>Download CV</span>
+                <span class="cv-arrow">↗</span>
+              </a>
+
+              <!-- Education -->
+              <div class="exp-block">
+                <div class="exp-label">Education</div>
+                <div class="exp-row">
+                  <div class="exp-years">2024 — 2026</div>
+                  <div>
+                    <div class="exp-org">IT-Högskolan Göteborg</div>
+                    <div class="exp-role">UX/UI-Designer</div>
+                    <div class="exp-detail">User Research, Prototyping, Accessibility, Figma, Typography, Branding</div>
+                  </div>
+                </div>
+                <div class="exp-row">
+                  <div class="exp-years">2016 — 2018</div>
+                  <div>
+                    <div class="exp-org">Filmarbetarutbildningen</div>
+                    <div class="exp-role">Coordinator, Productionplanning, Locationmanager</div>
+                    <div class="exp-detail">Movie Magic, </div>
+                  </div>
+                </div>
+                <div class="exp-row">
+                  <div class="exp-years">2012 — 2015</div>
+                  <div>
+                    <div class="exp-org">Stockholmselementära teaterskola, Nordiska Folkhögskolan - Teater </div>
+                    <div class="exp-role">Actor</div>
+                    <div class="exp-detail">Writing, acting</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience -->
+              <div class="exp-block">
+                <div class="exp-label">Experience</div>
+                <div class="exp-row">
+                  <div class="exp-years">Jan — May 2026</div>
+                  <div>
+                    <div class="exp-org">Humblebee Hive 16</div>
+                    <div class="exp-role">Interaction Design Internship</div>
+                    <div class="exp-detail">UX/UI design collaboration with a team of 5 students, working on real client briefs from discovery through delivery.</div>
+                  </div>
+                </div>
+                <div class="exp-row">
+                  <div class="exp-years">Autumm 2025</div>
+                  <div>
+                    <div class="exp-org">Mölnlycke Healthcare</div>
+                    <div class="exp-role">UX-Designer Internship</div>
+                    <div class="exp-detail">Designing and prototyping interfaces for a consumer-facing wellness application, from concept to high-fidelity mockups.</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Right column — contact -->
+    <div class="col-right">
+      <div class="col-right-inner">
+        <button class="dark-toggle sidebar-dark-toggle" id="sidebarDarkToggle" aria-label="Toggle dark mode">
+          <span class="dt-icon">◐</span>
+        </button>
+        <div class="contact-block-sidebar" id="cBlockSidebar">
+          <a href="mailto:freddho91@gmail.com">freddho91@gmail.com</a>
+          <a href="https://linkedin.com/in/fredrikjohansson" target="_blank" rel="noopener noreferrer">linkedin.com/in/fredrikjohansson</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer CTA -->
+  <footer>
+    <div class="footer-cta">
+      <div class="footer-cta-label">Interested in working together?</div>
+      <a class="footer-cta-link" href="mailto:freddho91@gmail.com">Let's talk</a>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Fredrik Johansson</span>
+      <span class="footer-wm">
+        <span class="fw-word"><span class="fw-anchor">f</span><span class="fw-suffix" id="fwSufF"><span class="fw-c">r</span><span class="fw-c">e</span><span class="fw-c">d</span><span class="fw-c">r</span><span class="fw-c">i</span><span class="fw-c">k</span></span></span><span class="fw-sp" id="fwSp">&nbsp;</span><span class="fw-word"><span class="fw-anchor">j</span><span class="fw-suffix" id="fwSufJ"><span class="fw-c">o</span><span class="fw-c">h</span><span class="fw-c">a</span><span class="fw-c">n</span><span class="fw-c">s</span><span class="fw-c">s</span><span class="fw-c">o</span><span class="fw-c">n</span></span></span>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="pageTransition" aria-hidden="true"></div>
+
+  <!-- Mobile header -->
+  <header class="mobile-header">
+    <span class="mobile-wm">fj</span>
+    <nav id="mobileInlineNav">
+      <a class="nav-link active" href="#projects" data-text="Projects">Projects</a>
+      <a class="nav-link" href="#about" data-text="About">About</a>
+      <a class="nav-link" id="mobileContactTrigger" href="#contact" data-text="Contact">Contact</a>
+    </nav>
+    <button class="dark-toggle mobile-dark-toggle" id="mobileDarkToggle" aria-label="Toggle dark mode">
+      <span class="dt-icon">◐</span>
+    </button>
+  </header>
+
+  <!-- Mobile contact -->
+  <div class="mobile-contact">
+    <div class="mobile-contact-label">Contact</div>
+    <div class="mobile-contact-links">
+      <a href="mailto:freddho91@gmail.com">freddho91@gmail.com <span>&#8599;</span></a>
+      <a href="https://linkedin.com/in/fredrikjohansson" target="_blank" rel="noopener noreferrer">linkedin.com/in/fredrikjohansson <span>&#8599;</span></a>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
