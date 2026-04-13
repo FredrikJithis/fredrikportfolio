@@ -62,6 +62,13 @@ a:focus-visible, button:focus-visible {
   .about-heading span { opacity: 1 !important; }
 }
 
+/* ── LINKEDIN ICON ─── */
+.linkedin-icon {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 2px;
+}
+
 /* ── PROGRESS BAR ─── */
 .prog {
   position: fixed; top: 0; left: 0;
