@@ -41,7 +41,7 @@ a:focus-visible, button:focus-visible {
 .case-progress {
   position: fixed; top: 0; left: 0;
   height: 2px; width: 0;
-  background: var(--accent);
+  background: var(--text);
   z-index: 9999;
   pointer-events: none;
   transition: width .08s linear;
