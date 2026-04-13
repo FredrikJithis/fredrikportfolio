@@ -3,10 +3,18 @@
    ============================================ */
 
 :root {
-  --bg: #FFF;
+  --bg: #F7F5F2;
   --text: #0F0F0E;
   --border: rgba(15, 15, 14, 0.1);
   --muted: rgba(15, 15, 14, 0.6);
+  --accent: #6B8F71;
+}
+body.dark {
+  --bg: #141413;
+  --text: #E8E6E1;
+  --border: rgba(232, 230, 225, 0.12);
+  --muted: rgba(232, 230, 225, 0.5);
+  --accent: #8FB896;
 }
 
 /* ── RESET ─── */
@@ -33,7 +41,7 @@ a:focus-visible, button:focus-visible {
 .case-progress {
   position: fixed; top: 0; left: 0;
   height: 2px; width: 0;
-  background: var(--accent, #6B8F71);
+  background: var(--accent);
   z-index: 9999;
   pointer-events: none;
   transition: width .08s linear;
@@ -56,7 +64,7 @@ a:focus-visible, button:focus-visible {
   letter-spacing: 0.14em; text-transform: uppercase;
 }
 .case-back::before { content: '← '; }
-.case-back:hover { font-weight: 700; }
+.case-back:hover { font-weight: 700; color: var(--accent); }
 .case-wm {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700; font-size: 22px;
@@ -240,7 +248,7 @@ a:focus-visible, button:focus-visible {
   border: none; cursor: pointer;
   transition: background .2s;
 }
-.carousel-dot.active { background: var(--text); }
+.carousel-dot.active { background: var(--accent); }
 .carousel-btn {
   background: none; border: 1px solid var(--text);
   width: 36px; height: 36px; border-radius: 50%;
@@ -250,7 +258,7 @@ a:focus-visible, button:focus-visible {
   display: flex; align-items: center; justify-content: center;
   transition: background .2s, color .2s;
 }
-.carousel-btn:hover { background: var(--text); color: var(--bg); }
+.carousel-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .carousel-nav { display: flex; gap: 8px; }
 
 /* ── MOODBOARD COLLAGE ─── */
@@ -391,7 +399,7 @@ body.dark .roles-diagram {
   display: inline-block;
   transition: opacity .2s;
 }
-.case-footer-link:hover { opacity: 0.6; }
+.case-footer-link:hover { color: var(--accent); }
 .case-footer-link::after { content: ' →'; }
 .case-footer-bottom {
   max-width: 1200px;
