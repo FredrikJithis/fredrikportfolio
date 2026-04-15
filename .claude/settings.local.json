@@ -6,7 +6,8 @@
       "Bash(mkdir -p _originals_backup)",
       "Bash(cp -n *.png *.jpg *.JPG _originals_backup/)",
       "Bash(mkdir -p originals)",
-      "Bash(find . -maxdepth 1 -type f \\\\\\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \\\\\\) -exec mv {} originals/ \\\\;)"
+      "Bash(find . -maxdepth 1 -type f \\\\\\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \\\\\\) -exec mv {} originals/ \\\\;)",
+      "Bash(sips -g pixelWidth -g pixelHeight -g orientation originals/Fredrikabout.JPG)"
     ]
   }
 }
