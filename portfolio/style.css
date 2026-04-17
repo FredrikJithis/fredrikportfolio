@@ -667,12 +667,12 @@ footer {
 
 /* ── PAGE EXIT ANIMATION ─── */
 @keyframes pageExit {
-  to { opacity: 0; transform: scale(0.98); }
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.98); }
 }
-.page-exit .work-grid,
-.page-exit .about,
-.page-exit .contact,
-.page-exit footer {
+body.page-exit .page-grid,
+body.page-exit .pre-scroll-bar,
+body.page-exit footer {
   animation: pageExit 300ms ease-in forwards;
   pointer-events: none;
 }

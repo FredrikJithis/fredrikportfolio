@@ -148,33 +148,5 @@
   </div>
 
   <script src="../../case.js"></script>
-  <script>
-  // Second carousel (Result section)
-  (function(){
-    var slides = document.getElementById('carouselSlides2');
-    var dotsWrap = document.getElementById('carouselDots2');
-    var prev = document.getElementById('carouselPrev2');
-    var next = document.getElementById('carouselNext2');
-    if (!slides || !dotsWrap || !prev || !next) return;
-    var count = slides.children.length;
-    var idx = 0;
-    for (var i = 0; i < count; i++) {
-      var d = document.createElement('button');
-      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', 'Slide ' + (i + 1));
-      (function(n){ d.addEventListener('click', function(){ go(n); }); })(i);
-      dotsWrap.appendChild(d);
-    }
-    function go(n) {
-      idx = (n + count) % count;
-      slides.style.transform = 'translateX(-' + (idx * 100) + '%)';
-      dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-        d.classList.toggle('active', i === idx);
-      });
-    }
-    prev.addEventListener('click', function(){ go(idx - 1); });
-    next.addEventListener('click', function(){ go(idx + 1); });
-  })();
-  </script>
 </body>
 </html>

@@ -586,15 +586,16 @@
     var overlay = document.getElementById('pageTransition');
     if (overlay) overlay.style.display = 'none';
 
+    var pageGrid = document.getElementById('pageGrid');
+
     document.querySelectorAll('a.project-card[href]').forEach(function (link) {
       link.addEventListener('click', function (e) {
         var href = link.getAttribute('href');
         if (!href || href.startsWith('#')) return;
         e.preventDefault();
         document.body.classList.add('page-exit');
-        var grid = document.querySelector('.work-grid');
-        if (grid) {
-          grid.addEventListener('animationend', function () {
+        if (pageGrid) {
+          pageGrid.addEventListener('animationend', function () {
             window.location.href = href;
           }, { once: true });
         } else {
