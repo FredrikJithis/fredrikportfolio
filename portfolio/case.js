@@ -46,17 +46,33 @@
     next.addEventListener('click', function () { go(idx + 1); });
   }
 
-  // Ensure page transition overlay is always hidden (prevents stuck overlay on bfcache restore)
+  // Hide legacy overlay (never used, prevent bfcache issues)
   var overlay = document.getElementById('pageTransition');
-  if (overlay) {
-    overlay.classList.remove('active');
-    overlay.style.opacity = '0';
-  }
-  window.addEventListener('pageshow', function () {
-    if (overlay) {
-      overlay.classList.remove('active');
-      overlay.style.opacity = '0';
+  if (overlay) { overlay.style.display = 'none'; }
+
+  // Page-enter animation — only on forward navigation
+  var isBack = false;
+  try {
+    var navEntries = performance.getEntriesByType('navigation');
+    if (navEntries.length && navEntries[0].type === 'back_forward') isBack = true;
+  } catch (e) {}
+
+  if (!isBack) {
+    document.body.classList.add('page-enter');
+    var wrap = document.querySelector('.case-wrap');
+    if (wrap) {
+      wrap.addEventListener('animationend', function () {
+        document.body.classList.remove('page-enter');
+      }, { once: true });
     }
+  }
+
+  // On bfcache restore, never show animation
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      document.body.classList.remove('page-enter');
+    }
+    if (overlay) { overlay.style.display = 'none'; }
   });
 
   // Dark mode — respect main page setting

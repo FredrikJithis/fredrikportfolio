@@ -582,27 +582,33 @@
      Smooth crossfade when navigating to case pages
      ============================================ */
   function initPageTransition() {
+    // Hide legacy overlay
     var overlay = document.getElementById('pageTransition');
-    if (!overlay) return;
+    if (overlay) overlay.style.display = 'none';
 
     document.querySelectorAll('a.project-card[href]').forEach(function (link) {
       link.addEventListener('click', function (e) {
         var href = link.getAttribute('href');
         if (!href || href.startsWith('#')) return;
         e.preventDefault();
-        overlay.classList.add('active');
-        setTimeout(function () {
-          window.location.href = href;
-        }, 400);
+        document.body.classList.add('page-exit');
+        var grid = document.querySelector('.work-grid');
+        if (grid) {
+          grid.addEventListener('animationend', function () {
+            window.location.href = href;
+          }, { once: true });
+        } else {
+          setTimeout(function () { window.location.href = href; }, 300);
+        }
       });
     });
 
-    // Always clear overlay on load and bfcache restore
-    overlay.classList.remove('active');
-    overlay.style.opacity = '0';
-    window.addEventListener('pageshow', function () {
-      overlay.classList.remove('active');
-      overlay.style.opacity = '0';
+    // Clear exit state on bfcache restore (back button to homepage)
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        document.body.classList.remove('page-exit');
+      }
+      if (overlay) overlay.style.display = 'none';
     });
   }
 

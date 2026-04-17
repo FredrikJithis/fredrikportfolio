@@ -665,16 +665,17 @@ footer {
 .dt-icon { font-size: 16px; line-height: 1; }
 .sidebar-dark-toggle { margin-bottom: 8px; }
 
-/* ── PAGE TRANSITION ─── */
-.page-transition {
-  position: fixed; inset: 0;
-  background: var(--text);
-  z-index: 10000;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .4s cubic-bezier(.25,.46,.45,.94);
+/* ── PAGE EXIT ANIMATION ─── */
+@keyframes pageExit {
+  to { opacity: 0; transform: scale(0.98); }
 }
-.page-transition.active { opacity: 1; pointer-events: all; }
+.page-exit .work-grid,
+.page-exit .about,
+.page-exit .contact,
+.page-exit footer {
+  animation: pageExit 300ms ease-in forwards;
+  pointer-events: none;
+}
 
 /* ── CV BUTTON ARROW ANIMATION ─── */
 .cv-button:hover .cv-arrow {

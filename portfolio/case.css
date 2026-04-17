@@ -28,6 +28,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+/* ── PAGE ENTER ANIMATION ─── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter .case-wrap,
+.page-enter .case-footer,
+.page-enter .case-footer-bottom {
+  animation: fadeSlideIn 400ms ease-out forwards;
+}
+
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
