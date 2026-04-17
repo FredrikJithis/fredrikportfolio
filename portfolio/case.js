@@ -46,28 +46,18 @@
     next.addEventListener('click', function () { go(idx + 1); });
   }
 
-  // Page transition — fade in on arrival
+  // Ensure page transition overlay is always hidden (prevents stuck overlay on bfcache restore)
   var overlay = document.getElementById('pageTransition');
   if (overlay) {
-    overlay.classList.add('active');
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        overlay.classList.remove('active');
-      });
-    });
+    overlay.classList.remove('active');
+    overlay.style.opacity = '0';
   }
-
-  // Page transition — fade out on back link click
-  var backLink = document.querySelector('.case-back');
-  if (backLink && overlay) {
-    backLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      overlay.classList.add('active');
-      setTimeout(function () {
-        window.location.href = backLink.getAttribute('href');
-      }, 400);
-    });
-  }
+  window.addEventListener('pageshow', function () {
+    if (overlay) {
+      overlay.classList.remove('active');
+      overlay.style.opacity = '0';
+    }
+  });
 
   // Dark mode — respect main page setting
   var saved = localStorage.getItem('darkMode');

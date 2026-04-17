@@ -597,12 +597,13 @@
       });
     });
 
-    // Fade in when arriving from a case page
-    if (overlay.classList.contains('active')) {
-      requestAnimationFrame(function () {
-        overlay.classList.remove('active');
-      });
-    }
+    // Always clear overlay on load and bfcache restore
+    overlay.classList.remove('active');
+    overlay.style.opacity = '0';
+    window.addEventListener('pageshow', function () {
+      overlay.classList.remove('active');
+      overlay.style.opacity = '0';
+    });
   }
 
   /* ============================================
