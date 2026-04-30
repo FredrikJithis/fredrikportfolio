@@ -16,6 +16,7 @@ body.dark {
   --muted: rgba(232, 230, 225, 0.5);
   --accent: #8FB896;
 }
+body { background: var(--bg); color: var(--text); }
 
 /* ── RESET ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
