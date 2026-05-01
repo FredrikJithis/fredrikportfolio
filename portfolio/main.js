@@ -17,6 +17,11 @@
     return;
   }
 
+  /* ── Early subtitle fade — hide UX/UI Designer line as soon as user scrolls ─── */
+  window.addEventListener('scroll', function () {
+    document.body.classList.toggle('subtitle-fade', window.scrollY > 30);
+  }, { passive: true });
+
   /* ============================================
      EASING UTILITIES
      ============================================ */

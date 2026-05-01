@@ -142,15 +142,16 @@ body.scrolled .pre-scroll-bar {
   text-align: center;
   padding: 12px 0 0;
   opacity: 0.55;
-  transition: opacity .3s ease;
+  transition: opacity .25s ease;
 }
+body.subtitle-fade .psb-subtitle,
 body.scrolled .psb-subtitle { opacity: 0; }
 
 #preScrollNav {
   display: flex;
   justify-content: center;
   gap: 60px;
-  padding: 14px 0 0;
+  padding: 56px 0 0;
   pointer-events: auto;
   transform-style: preserve-3d;
   overflow: visible;
@@ -165,7 +166,7 @@ body.scrolled .psb-subtitle { opacity: 0; }
   min-height: 100vh;
 }
 body.scrolled .page-grid {
-  grid-template-columns: var(--col-left-width) 1fr var(--col-right-width);
+  grid-template-columns: var(--col-left-width) 1fr 0px;
   transition: grid-template-columns 0.5s cubic-bezier(.25,.46,.45,.94);
 }
 
@@ -276,7 +277,8 @@ body.scrolled .col-main {
   padding-right: 0;
 }
 .content-wrap { max-width: 1050px; margin: 0 auto; }
-#projects { padding-bottom: 72px; }
+#projects { padding-top: 32px; padding-bottom: 72px; }
+body.scrolled #projects { padding-top: 48px; }
 
 /* ── SHARED NAV ─── */
 nav { transform-style: preserve-3d; }
@@ -307,6 +309,18 @@ nav { transform-style: preserve-3d; }
   transition: opacity 0.3s ease;
 }
 body.scrolled #desktopNav { opacity: 1; }
+
+.sidebar-extras {
+  margin-top: auto;
+  display: flex; flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+body.scrolled .sidebar-extras { opacity: 1; }
+.sidebar-extras .contact-block-sidebar { align-items: flex-start; text-align: left; }
 body.scrolled #preScrollNav { pointer-events: none; }
 
 .nav-link.flip-in {
@@ -349,9 +363,10 @@ body.scrolled #preScrollNav { pointer-events: none; }
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--text);
-  margin-bottom: 28px;
+  margin: 24px 0 36px;
 }
-.rule { height: 1px; background: var(--border); margin: 0 0 64px; }
+.rule { height: 1px; background: var(--border); margin: 64px 0 0; }
+#projects > .rule { margin-top: 0; }
 
 /* ── PROJECT GRID ─── */
 .project-grid {
@@ -427,7 +442,7 @@ body.scrolled #preScrollNav { pointer-events: none; }
 }
 
 /* ── ABOUT ─── */
-#about { padding-bottom: 96px; }
+#about { padding-top: 48px; padding-bottom: 96px; }
 .about-grid {
   display: grid;
   grid-template-columns: 404px 1fr;
@@ -462,6 +477,7 @@ body.scrolled #preScrollNav { pointer-events: none; }
   object-fit: cover;
   display: block;
 }
+.about-text { padding-top: 48px; }
 .about-text p {
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px; font-weight: 400;

@@ -17,6 +17,126 @@
 </head>
 <body>
 
+  <style>
+    /* ── RIDE & ROAST EDITORIAL OVERRIDES ─── */
+    .rr-hero {
+      display: block;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      max-width: none;
+      height: auto;
+      margin-top: 3rem;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .rr-intro-stack,
+    .rr-result-sequence,
+    .rr-story-stack,
+    .rr-moodboard-wide {
+      width: 100%;
+      max-width: 1200px;
+      margin: 4rem auto 0;
+    }
+    .rr-story-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .rr-story-stack img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .rr-intro-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .rr-intro-stack img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .rr-intro-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .rr-intro-pair img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+    }
+    .rr-story-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .rr-story-stack img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+    }
+    .rr-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      opacity: 0.4;
+      margin-top: 0.5rem;
+      display: block;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .rr-result-sequence {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .rr-result-sequence img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .rr-after-bleed .case-section-label,
+    .rr-after-bleed .case-section-heading {
+      padding-top: 5rem;
+    }
+
+    /* Scroll fade-in */
+    .rr-fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .rr-fade.rr-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .rr-hero.rr-fade {
+      transform: none;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .rr-hero.rr-fade.rr-visible {
+      transform: none;
+    }
+
+    @media (max-width: 720px) {
+      .rr-intro-row { grid-template-columns: 1fr; }
+      .rr-intro-row img { height: auto; }
+      .rr-result-sequence { grid-template-columns: 1fr; }
+      .rr-result-sequence img { height: auto; }
+      .rr-hero { height: 60vh; }
+    }
+  </style>
+
   <div class="case-progress" id="caseProgress" aria-hidden="true"></div>
 
   <div class="case-bar" id="caseBar">
@@ -37,6 +157,8 @@
       </div>
     </header>
 
+    <img class="rr-hero rr-fade" src="../../img/ride-roast/Ridestreet.webp" alt="Ride & Roast street view" loading="lazy">
+
     <!-- Intro -->
     <section class="case-section">
       <div class="case-section-grid">
@@ -45,22 +167,13 @@
           <h2 class="case-section-heading">Where coffee culture meets urban mobility.</h2>
           <p>Ride &amp; Roast is a brand concept for a modern café and bicycle workshop, where coffee culture meets urban mobility.</p>
           <p>The identity is built to reflect craftsmanship, precision, and community — creating a cohesive experience across both physical and digital touchpoints.</p>
-          <div class="carousel" id="carousel">
-            <div class="carousel-track">
-              <div class="carousel-slides" id="carouselSlides">
-                <div class="carousel-slide"><img src="../../img/ride-roast/Ridestreet.webp" alt="Ride & Roast street view" loading="lazy"></div>
-                <div class="carousel-slide"><img src="../../img/ride-roast/storeride1.webp" alt="Ride & Roast store" loading="lazy"></div>
-                <div class="carousel-slide"><img src="../../img/ride-roast/totebagride.webp" alt="Ride & Roast tote bag" loading="lazy"></div>
-              </div>
-            </div>
-            <div class="carousel-controls">
-              <div class="carousel-dots" id="carouselDots"></div>
-              <div class="carousel-nav">
-                <button class="carousel-btn" id="carouselPrev" aria-label="Previous">‹</button>
-                <button class="carousel-btn" id="carouselNext" aria-label="Next">›</button>
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="rr-intro-stack">
+        <img class="rr-fade" src="../../img/ride-roast/storeride1.webp" alt="Ride & Roast store" loading="lazy">
+        <div class="rr-intro-pair">
+          <img class="rr-fade" src="../../img/ride-roast/totebagride.webp" alt="Ride & Roast tote bag" loading="lazy">
+          <img class="rr-fade" src="../../img/ride-roast/takeawayride.webp" alt="Ride & Roast takeaway" loading="lazy">
         </div>
       </div>
     </section>
@@ -73,19 +186,18 @@
           <h2 class="case-section-heading">Movement, community, and everyday pauses</h2>
           <p>The moodboard for Ride &amp; Roast is built around a sense of movement, community, and everyday pauses. It explores the contrast between activity and calm — where cycling represents energy and freedom, while coffee symbolizes recovery and social connection.</p>
           <p>The color palette and visual style lean toward warm, earthy tones combined with clean, modern elements to balance the urban and the natural. Overall, the moodboard aims to convey a lifestyle rather than just a service.</p>
-
-          <!-- Moodboard grid — cykel2 centered -->
-          <div class="moodboard-collage">
-            <div class="mb-item mb-a"><img src="../../img/ride-roast/cykel1.webp" alt="Moodboard cycling 1" loading="lazy"></div>
-            <div class="mb-item mb-b"><img src="../../img/ride-roast/kaffe1.webp" alt="Moodboard coffee" loading="lazy"></div>
-            <div class="mb-item mb-c"><img src="../../img/ride-roast/cykel 3.webp" alt="Moodboard cycling 3" loading="lazy"></div>
-            <div class="mb-item mb-center"><img src="../../img/ride-roast/cykel2.webp" alt="Moodboard cycling 2 — hero" loading="lazy"></div>
-            <div class="mb-item mb-d"><img src="../../img/ride-roast/cykel 4.webp" alt="Moodboard cycling 4" loading="lazy"></div>
-            <div class="mb-item mb-e"><img src="../../img/ride-roast/cykel 5.webp" alt="Moodboard cycling 5" loading="lazy"></div>
-            <div class="mb-item mb-f"><img src="../../img/ride-roast/cykel 6.webp" alt="Moodboard cycling 6" loading="lazy"></div>
-            <div class="mb-item mb-g"><img src="../../img/ride-roast/cykel 7.webp" alt="Moodboard cycling 7" loading="lazy"></div>
-          </div>
         </div>
+      </div>
+      <!-- Moodboard grid — cykel2 centered -->
+      <div class="moodboard-collage rr-moodboard-wide">
+        <div class="mb-item mb-a"><img class="rr-fade" src="../../img/ride-roast/cykel1.webp" alt="Moodboard cycling 1" loading="lazy"></div>
+        <div class="mb-item mb-b"><img class="rr-fade" src="../../img/ride-roast/kaffe1.webp" alt="Moodboard coffee" loading="lazy"></div>
+        <div class="mb-item mb-c"><img class="rr-fade" src="../../img/ride-roast/cykel 3.webp" alt="Moodboard cycling 3" loading="lazy"></div>
+        <div class="mb-item mb-center"><img class="rr-fade" src="../../img/ride-roast/cykel2.webp" alt="Moodboard cycling 2 — hero" loading="lazy"></div>
+        <div class="mb-item mb-d"><img class="rr-fade" src="../../img/ride-roast/cykel 4.webp" alt="Moodboard cycling 4" loading="lazy"></div>
+        <div class="mb-item mb-e"><img class="rr-fade" src="../../img/ride-roast/cykel 5.webp" alt="Moodboard cycling 5" loading="lazy"></div>
+        <div class="mb-item mb-f"><img class="rr-fade" src="../../img/ride-roast/cykel 6.webp" alt="Moodboard cycling 6" loading="lazy"></div>
+        <div class="mb-item mb-g"><img class="rr-fade" src="../../img/ride-roast/cykel 7.webp" alt="Moodboard cycling 7" loading="lazy"></div>
       </div>
     </section>
 
@@ -97,11 +209,16 @@
           <h2 class="case-section-heading">From concept to identity</h2>
           <p>The concept for Ride &amp; Roast was developed through an iterative process, starting with identifying user needs around movement, social interaction, and meaningful breaks in everyday life. Through research and early ideation, I explored how cycling and coffee culture could be combined into a cohesive experience.</p>
           <p>Sketching, moodboarding, and testing different directions helped shape the concept, focusing on simplicity, accessibility, and a strong sense of community. The final idea reflects a balance between functionality and emotion, aiming to create a service that feels both practical and engaging.</p>
-
-          <div class="story-visuals">
-            <img src="../../img/ride-roast/3logos.webp" alt="Logo iterations for Ride & Roast" loading="lazy" class="story-logos">
-            <img src="../../img/ride-roast/colorsride.webp" alt="Ride & Roast color palette" loading="lazy" class="story-colors">
-          </div>
+        </div>
+      </div>
+      <div class="rr-story-stack">
+        <div>
+          <img class="story-logos rr-fade" src="../../img/ride-roast/3logos.webp" alt="Logo iterations for Ride & Roast" loading="lazy">
+          <span class="rr-caption">Logo explorations</span>
+        </div>
+        <div>
+          <img class="story-colors rr-fade" src="../../img/ride-roast/colorsride.webp" alt="Ride & Roast color palette" loading="lazy">
+          <span class="rr-caption">Colour system</span>
         </div>
       </div>
     </section>
@@ -114,23 +231,11 @@
           <h2 class="case-section-heading">The final brand system</h2>
           <p>Brand identity for a modern café and bicycle workshop where coffee culture meets urban mobility. The visual system is rooted in craftsmanship and community — a warm palette of Deep Roast, Leather, and Golden Oat runs through every touchpoint, from menus (food, service, and drinks) to branded tote bags.</p>
           <p>The icon distills the cycling experience into a minimal, geometric mark that feels equally at home on a coffee cup and a workshop sign. Every element is designed to bridge two worlds — the ritual of a good brew and the freedom of the ride.</p>
-          <div class="carousel" id="carousel2">
-            <div class="carousel-track">
-              <div class="carousel-slides" id="carouselSlides2">
-                <div class="carousel-slide"><img src="../../img/ride-roast/signride.webp" alt="Ride & Roast signage" loading="lazy"></div>
-                <div class="carousel-slide"><img src="../../img/ride-roast/takeawayride.webp" alt="Ride & Roast takeaway" loading="lazy"></div>
-                <div class="carousel-slide"><img src="../../img/ride-roast/storeride2.webp" alt="Ride & Roast store exterior" loading="lazy"></div>
-              </div>
-            </div>
-            <div class="carousel-controls">
-              <div class="carousel-dots" id="carouselDots2"></div>
-              <div class="carousel-nav">
-                <button class="carousel-btn" id="carouselPrev2" aria-label="Previous">‹</button>
-                <button class="carousel-btn" id="carouselNext2" aria-label="Next">›</button>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+      <div class="rr-result-sequence">
+        <img class="rr-fade" src="../../img/ride-roast/signride.webp" alt="Ride & Roast signage" loading="lazy">
+        <img class="rr-fade" src="../../img/ride-roast/storeride2.webp" alt="Ride & Roast store exterior" loading="lazy">
       </div>
     </section>
 
@@ -146,5 +251,23 @@
   </div>
 
   <script src="../../case.js"></script>
+  <script>
+    (function () {
+      var fades = document.querySelectorAll('.rr-fade');
+      if (!('IntersectionObserver' in window)) {
+        fades.forEach(function (el) { el.classList.add('rr-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('rr-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      fades.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
