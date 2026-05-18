@@ -140,7 +140,7 @@ body.scrolled .pre-scroll-bar {
   text-transform: uppercase;
   color: var(--text);
   text-align: center;
-  padding: 12px 0 0;
+  padding: 32px 0 0;
   opacity: 0.55;
   transition: opacity .25s ease;
 }
